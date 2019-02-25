@@ -1,0 +1,62 @@
+/* CSS Document */
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+    border-top-right-radius: 0;
+}
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+    border-top-left-radius: 0;
+}
+#datepicker .triangle{
+	width: 26px;
+	height: 14px;
+	background: url(triangle.png);
+	margin-top: -13px;
+	position: absolute;
+	margin-left: 75px;
+}
+.ui-datepicker .ui-datepicker-buttonpane button {
+	margin: 5px;
+	padding: 0.4em 0.6em 0.3em;
+	outline: none;
+}
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current{
+	margin-left: 40px;
+}
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-close{
+	margin-right: 40px;
+}
+.ui-datepicker-current.ui-state-hover{
+	border: 0/*{borderColorHover}*/;
+	background: none;
+	font-weight: normal/*{fwDefault}*/;
+	color: #fff/*{fcHover}*/;
+}
+.ui-datepicker-current.ui-state-default {
+	border: 0;
+}
+.ui-datepicker-close.ui-state-hover{
+	border: 0/*{borderColorHover}*/;
+	background: none;
+	font-weight: normal/*{fwDefault}*/;
+	color: #fff/*{fcHover}*/;
+}
+.ui-datepicker-close.ui-state-default {
+	border: 0;
+}
+.ui-datepicker-current.ui-priority-secondary,
+.ui-datepicker-close.ui-priority-primary {
+	font-weight: normal;
+	color: #b16321;
+	opacity: 1;
+}
+.ui-datepicker-current.ui-priority-secondary.ui-state-hover,
+.ui-datepicker-close.ui-priority-primary.ui-state-hover {
+	font-weight: normal;
+	color: #fff;
+	opacity: 1;
+}
+.ui-datepicker-header .ui-state-hover {
+	border: 0;
+} 
+.ui-datepicker .ui-datepicker-header {
+	padding: 15px 0;
+}

@@ -1,0 +1,124 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+		"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>太原高新股份</title>
+	<link rel="stylesheet" type="text/css" href="css/index-end.css">
+	<link rel="stylesheet" type="text/css" href="js/plugins/checkbox/css/zl_checkbox_u4.css">
+	<script type="text/javascript" src="js/libs/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/views/end/index.js"></script>
+	<script type="text/javascript" src="js/plugins/jQueryAlert/jquery.alerts.js"></script>
+	<script type="text/javascript" src="js/plugins/checkbox/js/jquery.zl_checkbox_u4.js"></script>
+</head>
+<body>
+<div class="container login">
+	<div class="header">
+		<div class="header-box">
+			<div class="logo-login"></div>
+			<div class="user-msg">
+				返回系统首页
+			</div>
+			<div class="c-both"></div>
+		</div>
+	</div>
+	<div class="content login">
+		<div class="login-wrapper">
+			<div class="login-box">
+				<div class="normal-input textfield error mb-15">
+				<label class="label f-w-b">登录名
+					<span class="required">*</span>
+					<span class="error">格式错误</span>
+				</label>
+				<div class="textwrap h-40">
+					<input type="text" name="" class="login-input h-40" spellcheck="false"/>
+					<label class="icon"></label>
+				</div>
+			</div>
+				<div class="normal-input textfield mb-15">
+					<label class="label f-w-b">登录密码</label>
+					<div class="textwrap h-40">
+						<input type="text" name="" class="login-input h-40" spellcheck="false"/>
+						<label class="icon"></label>
+					</div>
+				</div>
+				<div class="normal-input textfield mb-15">
+					<label class="label f-w-b">验证码</label>
+					<div class="textwrap w-177 h-40 fl">
+						<input type="text" name="" class="login-input  w-137 h-40" spellcheck="false"/>
+						<label class="icon"></label>
+					</div>
+					<div class="fr">
+						<img src="images/end/code.jpg" alt=""/>
+					</div>
+				</div>
+				<a href="javascript:;" class="login-btn">登录</a>
+				<div class="protocol">
+					<input type="checkbox" class="checkbox"/>
+					<span>我同意并已阅读</span>
+					<a href="javascript:;" class="pro-a">&lt;&lt;卓朗统一登录协议&gt;&gt;</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="footer-box">版权所有 © 卓朗科技有限公司 2013 TROILA.Inc. 保留一切权利。津ICP备10200312号-3</div>
+	</div>
+
+</div>
+<script>
+	$(function(){
+		var winH = document.documentElement.clientHeight;
+		$(".content.login").height(winH-70-60-48)
+
+
+		$(".textfield :text").each(function () {
+			if (!$(this).hasClass("perInput")) {
+				var w = $(this).parents(".textfield").width();
+				$(this).css("width", (w - 40) + "px");
+			}
+			var icon = $(this).siblings(".icon")[0];
+			$(icon).on("click", function () {
+				$(this).siblings("input").val("");
+				$(this).parents(".textwrap").css("background-color", "#fff");
+
+				if (!$(this).parents(".textfield").hasClass("error")) {
+					$(this).parents(".textwrap").css("border-color", "#ccc");
+				}
+				$(this).hide();
+			});
+			$(this).bind("input focus", function () {
+				if ($(this).parents(".textfield").hasClass("disable")) {
+					return;
+				}
+				//如果文本框宽度大于50px，则显示X图标，否则不显示
+				if ($(this).width() > 50) {
+					$(icon).css("display", "inline-block");
+				}
+				$(this).parents(".textwrap").css("background-color", "#fff");
+				if (!$(this).parents(".textfield").hasClass("error")) {
+					$(this).parents(".textwrap").css("border-color", "#0099ff");
+				}
+			});
+			$(this).bind("blur", function () {
+				if ($(this).parents(".textfield").hasClass("disable")) {
+					return;
+				}
+				if ($(this).val() == "") {
+					$(icon).css("display", "none");
+				}
+				$(this).parents(".textwrap").css("background-color", "#fff");
+				if (!$(this).parents(".textfield").hasClass("error")) {
+					$(this).parents(".textwrap").css("border-color", "#ccc");
+				}
+
+			});
+		});
+
+		$(".checkbox").zl_checkbox();
+
+	})
+</script>
+
+</body>
+</html>

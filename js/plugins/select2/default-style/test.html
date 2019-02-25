@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="../../../css/common.css">
+    <script src="../../libs/jquery-1.11.1.min.js"></script>
+    <!--mystyle-->
+    <link rel="stylesheet" href="../../../css/teststyle.css">
+    <!--select2-->
+    <link rel="stylesheet" href="css/select2.css">
+    <script src="js/select2.full.js"></script>
+    <title>Title</title>
+</head>
+<body>
+    <div class="w-1200 mgauto">
+        <h4>官网 </h4>
+        <div class="mb-10">
+            <a href="http://select2.github.io/examples.html" class="f-s-15">http://select2.github.io/examples.html</a>
+        </div>
+        <h4>效果</h4>
+        <div class="mb-10">
+            <input type="button" value="click-here-to-get-value">
+            placeholder取值为NULL，相对于selectordie更精确
+        </div>
+        <div class="mb-10">
+
+            <label class="w150tar">多选</label>
+            <select class="w-300 type-multiple" multiple="multiple">
+            </select>
+        </div>
+        <div class="mb-10">
+            <label class="w150tar">树结构</label>
+            <select id="sel_menu" class="form-control w-300">
+                <optgroup label="目录1">
+                    <option value="1">内容1</option>
+                    <option value="2">内容2</option>
+                    <option value="3">内容3</option>
+                </optgroup>
+                <optgroup label="目录2">
+                    <option value="1">内容1</option>
+                    <option value="2">内容2</option>
+                    <option value="3">内容3</option>
+                </optgroup>
+                <optgroup label="目录3">
+                    <option value="1">内容1</option>
+                    <option value="2">内容2</option>
+                    <option value="3">内容3</option>
+                </optgroup>
+            </select>
+        </div>
+        <h4>多选-结构</h4>
+        <pre>
+              注：multiple="multiple"
+              <select class="w-300" multiple="multiple">
+              </select>
+        </pre>
+        <h4>多选-调用</h4>
+        <pre>
+            var data =  [{id: 'value0',text: 'Text to display'},{id:"value1",text:"test"}];
+            $("select").select2({
+                    placeholder: "请选择",
+                    tags: true,                 //回车可增加标签
+                    multiple: true,
+                    maximumSelectionLength: 3,  //最多可选择数量
+                    data:data,
+                    theme: "classic",           //皮肤
+            });
+        </pre>
+        <h4>树-结构</h4>
+        <pre>
+            <select id="sel_menu2" class="form-control w-300">
+                <optgroup label="目录1">
+                    <option value="1">内容1</option>
+                    <option value="2">内容2</option>
+                    <option value="3">内容3</option>
+                </optgroup>
+                <optgroup label="目录2">
+                    <option value="1">内容1</option>
+                    <option value="2">内容2</option>
+                    <option value="3">内容3</option>
+                </optgroup>
+                <optgroup label="目录3">
+                    <option value="1">内容1</option>
+                    <option value="2">内容2</option>
+                    <option value="3">内容3</option>
+                </optgroup>
+            </select>
+        </pre>
+        <h4>树-调用</h4>
+        <pre>
+            $("#sel_menu").select2({
+                minimumResultsForSearch: Infinity    //禁用搜索
+            });
+        </pre>
+    </div>
+<script>
+    $(document).ready(function () {
+        //去标签
+        $("pre").each(function(){
+            var thishtml = $(this).html();
+            var reg1= /\</g;
+            var reg2 = /\>/g;
+            thishtml=thishtml.replace(reg1,"&lt;");
+            thishtml=thishtml.replace(reg2,"&gt;");
+            $(this).html(thishtml);
+        });
+        $("input").click(function () {
+            alert($(".type-multiple").val())
+        })
+        var data =  [{id: 'value0',text: 'Text to display'},{id:"value1",text:"test"}];
+        $(".type-multiple").select2({
+            placeholder: "请选择",
+            tags: true,
+            theme: "classic",
+            maximumSelectionLength: 3,
+            data: data
+        });
+        $("#sel_menu").select2({
+            minimumResultsForSearch: Infinity
+        });
+
+
+    })
+
+</script>
+</body>
+</html>

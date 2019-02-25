@@ -1,0 +1,91 @@
+﻿/* CSS Document */
+.pagination a,.pagination span {
+    text-decoration: none;
+	color: #444444;
+	line-height:1.8em;
+	font-size: 14px;
+}
+.pagination .current.prev,.pagination .current.next {
+	color: #ccc;
+}
+/*.pagination a:hover{
+	color: #000;
+}*/
+.pagination .current {
+    color: #fff;
+}
+.pagination .current .page_current_l{
+	width:0px;
+	height:21px;
+	position:relative;
+	float:left;
+	background:url(../images/page_current_l.png) no-repeat;
+}
+.pagination .current .page_current_r{
+	width:0px;
+	height:21px;
+	float:left;
+	position:relative;
+	background:url(../images/page_current_r.png) no-repeat;
+}
+.pagination .current .page_current_m{
+	width:auto;
+	height:26px;
+	position:relative;
+	float:left;
+	background:#b16321;
+	padding:0 8px;
+	color:#FFFFFF;
+	border-radius:3px;
+/*	background:url(../images/page_current_m.png);*/
+	line-height:1.8em;
+}
+.pagination .prev div{
+	width:36px;
+	height:36px;
+	background:url(../images/page_prev.png) no-repeat top;
+	cursor: pointer;
+}
+.pagination .next div{
+	width:36px;
+	height:36px;
+	background:url(../images/page_next.png) no-repeat top;
+	cursor: pointer;
+}
+.pagination .current.prev>div{
+	background:url(../images/page_current_prev.png) no-repeat top;
+	cursor: default;
+}
+.pagination .current.next>div{
+	background:url(../images/page_current_next.png) no-repeat top;
+	cursor: default;
+}
+.pagination .first div {
+	width:10px;
+	height:12px;
+	margin-top:8px;
+	background:url(../images/page_first.png) no-repeat;
+	cursor: pointer;
+}
+.pagination .last div {
+	width:10px;
+	height:12px;
+	margin-top:8px;
+	background:url(../images/page_last.png) no-repeat;
+	cursor: pointer;
+}
+.pagination .current.first, .pagination .current.last, .pagination .current.prev, .pagination .current.next{
+	background: none;
+}
+.pagination .current.first>div{
+	background:url(../images/page_current_first.png) no-repeat;
+	cursor: default;
+}
+.pagination .current.last>div{
+	background:url(../images/page_current_last.png) no-repeat;
+	cursor: default;
+}
+.pagination a.last{
+	margin-right:0;
+	padding: 0.3em 0 0.3em 0.5em;
+}

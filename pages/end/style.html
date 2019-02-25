@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>组件</title>
+  <link rel="stylesheet" href="../../css/index-end.css" />
+  <!-- 请在所有子页面中添加这中间所有引用来使用组件 start -->
+  <script src="../../js/libs/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="../../js/views/end/index.js"></script>
+  <script type="text/javascript" src="../../js/plugins/My97DatePicker/WdatePicker.js"></script>
+  <link rel="stylesheet" href="../../js/plugins/select/default-style/css/content_u7.css" />
+  <script type="text/javascript" src="../../js/plugins/select/default-style/js/jquery.zl_select.u2.js"></script>
+  <script type="text/javascript" src="../../js/plugins/niceScroll/js/jquery.nicescroll.js"></script>
+  <link rel="stylesheet" href="../../js/plugins/select2/default-style/css/select2.css" />
+  <script type="text/javascript" src="../../js/plugins/select2/default-style/js/select2.full.js"></script>
+  <script type="text/javascript" src="../../js/plugins/select2/default-style/js/i18n/zh-CN.js"></script>
+  <script type="text/javascript" src="../../js/plugins/layer/default-style/layer.js"></script>
+  <!-- 请在所有子页面中添加这中间所有引用来使用组件 end -->
+  <style>
+    h1 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+    .horizontal{
+      height: 66px;
+    }
+    .horizontal:after{
+      display: block;
+      content: '';
+      clear: both;
+    }
+    .horizontal>label,.horizontal .textfield{
+      float:left;
+    }
+    .horizontal>label{
+      margin-top: 13px;
+      width: 120px;
+      text-align: right;
+      padding-right: 10px;
+    }
+    .horizontal>label>span.required{
+      color: #FF6666;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box-content-2">
+    <div>
+      <h1>文本框</h1>
+      
+      
+      <div class="normal-input textfield">
+        <label class="label">请输入用户名
+          <span class="required">*</span>
+          <span class="error">格式错误</span>
+        </label>
+        <div class="textwrap">
+          <input type="text" name="" class="" spellcheck="false" />
+          <label class="icon"></label>
+        </div>
+      </div>
+      <div class="normal-input textfield">
+        <label class="label">
+          <span class="error">格式错误</span>
+        </label>
+        <div class="textwrap">
+          <input type="text" name="" class="" spellcheck="false" placeholder="请输入用户名" />
+          <label class="icon"></label>
+        </div>
+      </div>
+      <div class="normal-input textfield error">
+        <label class="label">请输入用户名
+          <span class="required">*</span>
+          <span class="error">格式错误</span>
+        </label>
+        <div class="textwrap">
+          <input type="text" name="" class="" spellcheck="false" />
+          <label class="icon"></label>
+        </div>
+      </div>
+      <div class="normal-input textfield error">
+        <label class="label">
+          <span class="error">格式错误</span>
+        </label>
+        <div class="textwrap">
+          <input type="text" name="" class="" spellcheck="false" placeholder="请输入用户名" />
+          <label class="icon"></label>
+        </div>
+      </div>
+      <div class="normal-input textfield disable">
+        <div class="textwrap">
+          <input type="text" name="" class="" spellcheck="false" readonly="readonly" value="请输入用户名" />
+          <label class="icon"></label>
+        </div>
+      </div>
+      <div class="horizontal">
+          <label>请输入用户名<span class="required">*</span></label>
+          <div class="normal-input textfield">
+              <label class="label">
+                <span class="error">格式错误</span>
+              </label>
+              <div class="textwrap">
+                <input type="text" name="" class="" spellcheck="false" />
+                <label class="icon"></label>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div>
+      <h1>日期 my97</h1>
+      <div class="normal-input datefield_month w-300">
+        <label class="label">选择年月 My97</label>
+        <div>
+          <input type="text" spellcheck="false" runat="server" onfocus="WdatePicker({dateFmt:'yyyy年MM季度',disabledDates:['....-0[5-9]-..','....-1[0-2]-..'],startDate:'%y-01-01'})">
+          <div class="icon"></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h1>下拉框</h1>
+      <div class="normal-input dropdownfield">
+        <label class="label">下拉选择
+          <span class="required">*</span>
+          <span class="error">格式错误</span>
+        </label>
+        <select>
+          <option value="1">第一项</option>
+          <option value="2">第二项</option>
+          <option value="3">第三三三三三三三三三三三三三三</option>
+          <option value="4" selected="selected">第四项</option>
+          <option value="5">第五项</option>
+        </select>
+      </div>
+      <div class="normal-input dropdownfield error">
+        <label class="label">下拉选择
+          <span class="required">*</span>
+          <span class="error">格式错误</span>
+        </label>
+        <select>
+          <option value="1">第一项</option>
+          <option value="2">第二项</option>
+          <option value="3">第三三三三三三三三三三三三三三</option>
+          <option value="4" selected="selected">第四项</option>
+          <option value="5">第五项</option>
+        </select>
+      </div>
+      <div class="normal-input dropdownfield disable">
+        <label class="label">下拉选择
+          <span class="required">*</span>
+          <span class="error">格式错误</span>
+        </label>
+        <select disabled="disabled">
+          <option value="1">第一项</option>
+          <option value="2">第二项</option>
+          <option value="3">第三三三三三三三三三三三三三三</option>
+          <option value="4" selected="selected">第四项</option>
+          <option value="5">第五项</option>
+        </select>
+      </div>
+      <div class="normal-input dropdownfield">
+        <label class="label">下拉选择(分组下拉框)
+          <span class="required">*</span>
+          <span class="error">格式错误</span>
+        </label>
+        <select>
+          <optgroup label="内资企业">
+            <option value="110">国有企业</option>
+            <option value="120">集体企业</option>
+            <option value="130">股份合作企业</option>
+          </optgroup>
+          <optgroup label="外资企业">
+            <option value="110">国有企业</option>
+            <option value="120">集体企业</option>
+            <option value="130">股份合作企业</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="normal-input select2field" id="mySelect">
+        <label class="label">请选择(多选)
+          <span class="required">*</span>
+          <span class="error">格式错误</span>
+        </label>
+        <select class="select2 w-350" multiple="multiple"></select>
+      </div>
+      <script type="text/javascript">
+        var data = [{
+          id: '0',
+          text: '分行行长'
+        }, {
+          id: '1',
+          text: '分行副行长'
+        }, {
+          id: '2',
+          text: '业务科室主任'
+        }, {
+          id: '3',
+          text: '业务科室主任'
+        }, {
+          id: '4',
+          text: '客户经理'
+        }];
+        select2field_single_init("mySelect", data);
+        function select2field_single_init(element_id, data) {
+          $("#" + element_id + " .select2").select2({
+            placeholder: "请选择",
+            data: data,
+            language: "zh-CN"
+          });
+        }
+      </script>
+    </div>
+    <div>
+      <h1>textarea</h1>
+      <div class="normal-input textareafield wp-50">
+        <label class="label">宽度50%
+          <span class="required">*</span>
+          <span class="error">格式错误</span>
+        </label>
+        <textarea placeholder="请输入描述......" rows="10" spellcheck="false"></textarea>
+      </div>
+      <div class="normal-input textareafield w-600">
+        <label class="label">600宽度
+          <span class="required">*</span>
+          <span class="error">格式错误</span>
+        </label>
+        <textarea placeholder="请输入描述......" rows="10" spellcheck="false"></textarea>
+      </div>
+      <div class="normal-input textareafield error">
+        <label class="label">描述
+          <span class="required">*</span>
+          <span class="error">格式错误</span>
+        </label>
+        <textarea placeholder="请输入描述......" rows="10" spellcheck="false"></textarea>
+      </div>
+    </div>
+    <div>
+      <h1>按钮</h1>
+      <div>
+        <button class="normal_mainBtn">确定</button>
+        <button class="normal_normalBtn">取消</button>
+        <button class="normal_normalBtn disable">按钮disable</button>
+      </div>
+    </div>
+    <div>
+      <h1>弹窗</h1>
+      <div>
+        <button class="normal_mainBtn" id="alert1">询问弹窗</button>
+        <button class="normal_mainBtn" id="alert2">表单弹窗</button>
+      </div>
+    </div>
+
+  </div>
+  <script type="text/javascript">
+    //  文本输入框初始化
+    function textFieldInit(){
+      $(".textfield :text").each(function () {
+      if (!$(this).hasClass("perInput")) {
+        var w = $(this).parents(".textfield").width();
+        $(this).css("width", (w - 40) + "px");
+      }
+      var icon = $(this).siblings(".icon")[0];
+      $(icon).on("click", function () {
+        $(this).siblings("input").val("");
+        $(this).parents(".textwrap").css("background-color", "#fff");
+
+        if (!$(this).parents(".textfield").hasClass("error")) {
+          $(this).parents(".textwrap").css("border-color", "#ccc");
+        }
+        $(this).hide();
+      });
+      $(this).bind("input focus", function () {
+        if ($(this).parents(".textfield").hasClass("disable")) {
+          return;
+        }
+        //如果文本框宽度大于50px，则显示X图标，否则不显示
+        if ($(this).width() > 50) {
+          $(icon).css("display", "inline-block");
+        }
+        $(this).parents(".textwrap").css("background-color", "#fff");
+        if (!$(this).parents(".textfield").hasClass("error")) {
+          $(this).parents(".textwrap").css("border-color", "#0099ff");
+        }
+      });
+      $(this).bind("blur", function () {
+        if ($(this).parents(".textfield").hasClass("disable")) {
+          return;
+        }
+        if ($(this).val() == "") {
+          $(icon).css("display", "none");
+        }
+        $(this).parents(".textwrap").css("background-color", "#fff");
+        if (!$(this).parents(".textfield").hasClass("error")) {
+          $(this).parents(".textwrap").css("border-color", "#ccc");
+        }
+
+      });
+    });
+    }
+    textFieldInit();
+
+    // 下拉框初始化
+    $(".dropdownfield,.searchdropdownfield").each(function () {
+      var w = $(this).width();
+
+      if ($(this).data("select_obj")) {
+        //如果是在addBox下的组件，则清空结构
+        if ($(this).parents(".addBox").length != 0) {
+          var select = $(this).find("select").removeClass("zl_select_ele");
+          $(this).find(".zl_select").remove();
+          select.appendTo($(this));
+        }
+        //否则，reload数据
+        else {
+
+          $(this).data("select_obj").reloadData();
+          $(this).find(".zl_select").width(w);
+          $(this).find(".select-container span").width(w - 10);
+          $(this).find(".select-drop").width(w - 2);
+          return;
+        }
+
+      }
+
+      //否则重新初始化控件
+      var select_obj = $(this).find("select").zl_select({
+        w: w,
+        h: 32,
+        items_w: w - 2 + ""
+      });
+      $(this).data("select_obj", select_obj);
+      $(this).find(".select-container").css("background-color", "#fff");
+      $(this).find(".select-container").css("border-color", "#ccc");
+    });
+
+    //给下拉框加niceScroll样式
+    $(".dropdownfield .select-drop,.searchdropdownfield .select-drop").niceScroll({
+      autohidemode: false,
+      cursorcolor: "#0099ff"
+    }).resize();
+
+    // 弹窗
+    
+    $('#alert1').on('click',function () {
+      window.top.layer.open({
+        type: 1,
+        title: false,
+        content: "<p style='text-align:center;font-size:18px;margin-top: 70px'>您确定要删除列表吗？</p>",
+        area: ["500px","220px"],
+        btn: ["确定","取消"],
+        success: function(){
+
+        },
+        yes: function(){}
+      })
+    });
+    $('#alert2').on('click',function () {
+      window.top.layer.open({
+        type: 1,
+        title: "<span>新增邮箱</span>",
+        content: "<div class='horizontal'>"+
+                    "<label>请输入用户名<span class='required'>*</span></label>"+
+                    "<div class='normal-input textfield'>"+
+                        "<label class='label'>"+
+                          "<span class='error'>格式错误</span>"+
+                        "</label>"+
+                        "<div class='textwrap'>"+
+                          "<input type='text' spellcheck='false' />"+
+                          "<label class='icon'></label>"+
+                        "</div>"+
+                    "</div>"+
+                  "</div>",
+        area: ["500px","370px"],
+        btn: ["确定","取消"],
+        success: function(){
+          alert();
+          textFieldInit(); //弹出窗口后需要重新初始化表单
+        },
+        yes: function(){}
+      })
+    });
+  </script>
+</body>
+
+</html>

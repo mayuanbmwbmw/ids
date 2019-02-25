@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="../../css/index-end.css"/>
+  <link rel="stylesheet" href="../../js/plugins/select/default-style/css/content_u6.css"/>
+  <link rel="stylesheet" href="../../js/plugins/dataTable/css/jquery.dataTables.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../../js/plugins/checkbox/css/zl_checkbox_u4.css">
+  <!-- 请在所有子页面中添加这中间所有引用来使用组件 start -->
+  <script src="../../js/libs/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="../../js/views/end/index.js"></script>
+  <!--<script type="text/javascript" src="../../js/views/end/widget.js"></script>-->
+  <script type="text/javascript" src="../../js/plugins/dataTable/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="../../js/plugins/dataTable/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="../../js/plugins/My97DatePicker/WdatePicker.js"></script>
+  <script type="text/javascript" src="../../js/plugins/select/default-style/js/jquery.zl_select.u2.js"></script>
+
+  <script type="text/javascript" src="../../js/plugins/checkbox/js/jquery.zl_checkbox_u4.js"></script>
+  <!-- 请在所有子页面中添加这中间所有引用来使用组件 end -->
+</head>
+<body>
+<div class="box-content-2 agency-list">
+  <div class="box-content-header">
+    <div class="title">
+      <div class="title-bg"></div>字典组管理
+    </div>
+      <div class="search-wrapper">
+        <div class="input-wrapper d-ib">
+          <input type="text" class="search-box" placeholder="字典KEY">
+        </div>
+        <div class="input-wrapper d-ib">
+          <input type="text" class="search-box" placeholder="字典VALUE">
+        </div>
+        <div class="input-wrapper d-ib">
+          <input type="text" class="search-box" placeholder="创建者">
+        </div>
+        <div class="input-wrapper d-ib">
+          <input type="text" class="search-box date97" placeholder="创建时间">
+        </div>
+        <div class="input-wrapper dropdownfield d-ib">
+          <select>
+            <option value="1">人力资源部</option>
+            <option value="2">销售部门</option>
+            <option value="3">市场部</option>
+          </select>
+        </div>
+        <!--<div class="normal-input dropdownfield">-->
+          <!--<label class="label">下拉选择-->
+            <!--<span class="required">*</span>-->
+            <!--<span class="error">格式错误</span>-->
+          <!--</label>-->
+          <!--<select>-->
+            <!--<option value="1">第一项</option>-->
+            <!--<option value="2">第二项</option>-->
+            <!--<option value="3">第三三三三三三三三三三三三三三</option>-->
+            <!--<option value="4" selected="selected">第四项</option>-->
+            <!--<option value="5">第五项</option>-->
+          <!--</select>-->
+        <!--</div>-->
+
+
+        <a class="search-icon"></a>
+        <a class="more-icon"></a>
+      </div>
+      <div class="other-wrapper">
+        <a class="add-icon"></a>
+        <a href="javascript:;" class="list-btn">下载模板</a>
+        <a href="javascript:;" class="list-btn last">批量导入</a>
+      </div>
+    <div class="c-both"></div>
+  </div>
+  <div>
+    <table id="mainTable" class="mainTable display" cellspacing="0" width="100%">
+      <thead>
+      <tr>
+        <th>
+          <input type="checkbox" class="checkbox"/>
+        </th>
+        <th>字典组KEY</th>
+        <th>字典组VALUE</th>
+        <th>创建者</th>
+        <th>
+          创建时间
+          <span class="sort"></span>
+        </th>
+        <th class="state">
+          状态
+          <span class="sel"></span>
+          <ul class="state-list">
+            <li class="state-list-item">全部</li>
+            <li class="state-list-item">使用中</li>
+            <li class="state-list-item">可用</li>
+          </ul>
+        </th>
+        <th>操作</th>
+      </tr>
+      </thead>
+
+      <tbody>
+
+      <tr>
+        <td>
+          <input type="checkbox" class="checkbox"/>
+        </td>
+        <td><a href="javascript:;" class="state">22state</a></td>
+        <td>1项目单位</td>
+        <td>1admin</td>
+        <td>2222016-05-02 11:15:00</td>
+        <td><span class="ing">使用中</span></td>
+        <td class="operation">
+          <a href="服务机构_查看.html"><span class="add"><span>新增</span></span></a>
+          <a href="服务机构_新建.html"><span class="edit"><span>编辑</span></span></a>
+          <a href="javascript:;" onclick="delete_conform();"><span class="delete"><span>删除</span></span></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="checkbox" class="checkbox"/>
+        </td>
+        <td><a href="javascript:;" class="state">state</a></td>
+        <td>2项目单位</td>
+        <td>2admin</td>
+        <td>12016-05-02 11:15:00</td>
+        <td><span class="ed">可用</span></td>
+        <td class="operation">
+          <a href="服务机构_查看.html"><span class="add"><span>新增</span></span></a>
+          <a href="服务机构_新建.html"><span class="edit"><span>编辑</span></span></a>
+          <a href="javascript:;" onclick="delete_conform();"><span class="delete"><span>删除</span></span></a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="batch">批量删除</div>
+  </div>
+</div>
+<script type="text/javascript">
+  function delete_conform(){
+    jConfirm('你确认删除吗?', '提示', function(r) {
+        alert("删除回调执行！");
+    });
+  }
+  $(function(){
+    //dataTable通用配置
+    $('.mainTable').DataTable({
+//      ordering :false,//是否启用排序
+      searching : false,//是否  启用模糊搜索
+      lengthChange: true,
+      lengthMenu: [ 10, 25, 50, 75, 100 ],
+      //当处理大数据时，延迟渲染数据，有效提高Datatables处理能力
+      deferRender : true,
+      dom: 't<"table-wrapper"lpi>',
+      //国际化设置（设置中文显示）
+      language : {
+        search : '<span class="label label-success">搜索：</span>',//右上角的搜索文本，可以写html标签
+        paginate : {//分页的样式内容。
+          previous : "<span class='prepage'></span>",
+          next : "<span class='nextpage'></span>",
+          first : "<span class='firstpage'></span>",
+          last : "<span class='lastpage'></span>"
+        },
+        zeroRecords : "没有内容",//table tbody内容为空时，tbody的内容。
+        //下面三者构成了总体的左下角的内容。
+        info : "<span style='font-size:12px;color:#4e515e'>共_PAGES_页</span>",//左下角的信息显示，大写的词为关键字。  共_PAGES_ 页，显示第_START_ 到第 _END_ ，共_MAX_ 条
+        infoEmpty : "0条记录",//筛选为空时左下角的显示。
+        infoFiltered : "",//筛选之后的左下角筛选提示，
+        lengthMenu: "_MENU_"
+      },
+      paging : true,
+      pagingType : "full_numbers",//分页样式的类型full_numbers
+      "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 0,1,2,3,5,6 ] }],
+      "aaSorting": [[4, "asc"]]
+    });
+
+    //列表操作按钮tips
+    $(".mainTable tbody").on("mouseover mouseout","span",function(event){
+      if(event.type == "mouseover"){
+        $(this).children("i").show();
+      }else if(event.type == "mouseout"){
+        $(this).children("i").hide();
+      }
+    });
+
+    //input添加clear
+    clear()
+
+    //my97
+    $(".date97").focus(function () {
+      WdatePicker({
+        dateFmt:'yyyy-MM-dd',//格式配置
+        skin:'default',                             //皮肤
+        isShowToday:false,			                //显示"当前"
+        isShowClear:false,		                    //显示"清除"
+        firstDayOfWeek:1,                             //周的第一天
+        minDate:"2016-04-26 00:00:00",
+        maxDate:"2016-04-30 00:00:00",
+        autoPickDate:true,                           //true，选定日期即可自动输入
+        onpicked:function(dp){
+
+          var val=dp.cal.getDateStr();
+//                        alert(val)
+        }
+      })
+    });
+
+    //select
+    $(".dropdownfield select").zl_select({
+      w: 160
+      , h:32
+      , items_w: "160"
+    });
+
+    //checkbox
+    $(".checkbox").zl_checkbox();
+
+    //状态下拉框
+    $("th.state").hover(function(){
+        $(this).children(".state-list").toggle()
+    })
+  })
+</script>
+</body>
+</html>

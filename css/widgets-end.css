@@ -1,0 +1,471 @@
+﻿/*datatable*/
+table.dataTable.no-footer{
+    border-bottom: 1px solid #0099FF !important;
+    border-top: 1px solid #0099FF !important;
+}
+table.dataTable thead th, table.dataTable thead td{
+    border-bottom: none !important;
+    background: #F5F6FA;
+    text-align: center;
+}
+td{
+    text-align: center;
+}
+table.dataTable.stripe tbody tr.even, table.dataTable.display tbody tr.even{
+    background: #F5F6FA;
+}
+table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
+    background-color: #E6F5FF !important;
+    color: inherit !important;
+}
+
+table.dataTable.hover tbody tr:hover a, table.dataTable.display tbody tr:hover a{
+    color: #0099FF;
+}
+table.dataTable.hover tbody tr:hover a.state, table.dataTable.display tbody tr:hover a.state{
+    text-decoration: underline;
+
+}
+
+table.dataTable.hover tbody tr:hover .icon_checkbox, table.dataTable.display tbody tr:hover .icon_checkbox{
+    background: url(../images/end/checkbox-hover.png) no-repeat 0px center;
+}
+
+table.dataTable.hover tbody tr:hover .checkbox_checked .icon_checkbox, table.dataTable.display tbody tr:hover .checkbox_checked .icon_checkbox{
+	background: url(../images/end/checkbox-down.png) no-repeat 0px center;
+}
+
+.dataTables_wrapper .dataTables_info{
+    float: right !important;
+    clear: none !important;
+}
+.dataTables_wrapper .dataTables_length{
+    float: right !important;
+    padding-top: 14px;
+}
+.table-wrapper{
+    overflow: hidden;
+}
+table.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1,table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.hover tbody tr:hover>.sorting_1{
+	background-color: inherit !important;
+}
+
+/**********按钮**********/
+.normal_mainBtn{
+	background:#0099ff;
+	border-radius:2px;
+	font-size:14px;
+	text-align:center;
+	color: #fff;
+	padding: 6px 20px;
+	border:1px solid #0099ff;
+	outline: none;
+	font-family: "微软雅黑";
+	cursor:pointer;
+}
+.normal_mainBtn:hover{
+	background-color:#50b9ff;
+	border:1px solid #50b9ff;
+
+}
+.normal_mainBtn.disable{
+	background-color:#E3ECF1;
+	color: #C4C4C4;
+	border:1px solid #E3ECF1;
+
+}
+.normal_normalBtn{
+	background-color:#fff;
+	border-radius:2px;
+	font-size:14px;
+	text-align:center;
+	color: #0099ff;
+	padding: 6px 20px;
+	border:1px solid #0099ff;
+	outline: none;
+	font-family: "微软雅黑";
+	cursor:pointer;
+
+}
+.normal_normalBtn:hover{
+	background-color:#e6f5ff;
+	color: #0099ff;
+	border:1px solid #0099ff;
+
+
+}
+.normal_normalBtn.disable {
+	background-color:#eee;
+	color: #999;
+	border:1px solid #E3ECF1;
+	font-family: "微软雅黑"
+}
+
+.select-drop ul.items li{
+    height: 35px;
+    line-height: 35px;
+    background: #fff !important;
+    color: #999 !important;
+    font-size: 13px;}
+
+.select-drop ul.items li{
+    background: #fff !important;
+    color: #999 !important;
+    font-size: 13px;}
+
+
+/**********通用表单组件容器**********/
+
+.normal-input{
+	font-family: "微软雅黑";
+	color:#6C6C6C;
+	margin-bottom:25px; 
+	font-size: 14px;
+
+}
+
+.select-drop ul.items li.down{
+    /*background: red !important;*/}
+
+.select-drop ul.items li.down{
+    background: red !important;}
+
+.normal-input .label{
+	display: block;
+	padding-bottom: 8px;
+	position: relative;
+	font-size: 14px;
+	color:#666666;
+
+}
+
+.select-drop ul.items li.over {
+	background: #E6F5FF !important;
+
+}
+.select-drop ul.items li.over {
+	background: pink !important;
+}
+
+.normal-input .label .required{
+	color:#FF6666;
+	margin-left: 5px;
+
+}
+.normal-input .label .error{
+	color:#FF6666;
+	font-size: 12px;
+	position: absolute;
+	right:0;
+	bottom: 0;
+	display: none;
+
+}
+.normal-input>input{
+	height: 32px;
+	width: 332px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	padding-left:30px; 
+	border:none;
+	border-radius: 5px;
+	background-color: transparent;
+	outline: 0;
+}
+
+
+.error >label .error{
+	display: block !important;
+}
+/**********文本输入**********/
+.textfield{
+	width: 300px;
+}
+.textfield .textwrap{
+	position: relative;
+	background: #fff;
+	border-radius: 3px;
+	border:1px solid #ccc;
+    height: 32px;
+    box-sizing: border-box;
+}
+
+.textfield .textwrap input{
+	line-height: 30px;
+	height: 30px;
+	outline: 0;
+	border:none;
+	border-radius: 3px;
+	background-color: transparent;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	padding-left: 12px;
+	margin-left:0px;
+
+}
+.section-item.list .textfield .textwrap,.section-item.list .textfield .textwrap input{
+	height:30px;
+	line-height: 30px;	
+}
+
+.textfield .textwrap .icon{
+	width: 25px;
+	height: 32px;
+	background: url(../images/end/widget/btn_empty.png) no-repeat left center;
+	float: right;
+	cursor: pointer;
+	display: none;
+
+}
+.section-item.list .textfield .textwrap .icon{
+	height:30px;
+}
+
+.error .textwrap{
+	border:1px solid #FF6666;
+	background-color: #fff;
+}
+
+.disable .textwrap,.disable .textwrap input{
+	background-color: #eee;
+	color: #999;
+}
+/* placeholder样式 */
+input::-webkit-input-placeholder { 
+    color: #999;
+} 
+input:-moz-placeholder {
+    color: #999;
+} 
+input::-moz-placeholder {
+    color: #999;
+} 
+input:-ms-input-placeholder {
+    color: #999;
+}
+/* 日期输入框 */
+.datefield_month>div {
+    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding-left: 8px;
+    position: relative;
+    height: 34px;
+    line-height: 34px;
+    box-sizing: border-box;
+}
+.datefield_month>div>input{
+    height: 32px;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    border: none;
+    border-radius: 3px;
+    background-color: transparent;
+    outline: 0;
+    width: 100%;
+    line-height: 32px;
+}
+.datefield_month>div>.icon{
+    background: url("../images/end/widget/date.png") no-repeat center;
+    width: 30px;
+    height: 100%;
+    float: right;
+    clear: right;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    font-size: 12px;
+    text-align: center
+}
+
+/**********下拉框组件样式**********/
+.dropdownfield{
+	width:350px;
+}
+.disable select{
+	background-color: #E3ECF1;
+	color: #93ACBC;
+}
+.error .select-container{
+    border: 1px solid #FF6666 !important;
+    background-color: #fff !important;
+}
+.zl_select .select-container .open{
+	background: url(../images/end/widget/icon_down.png) no-repeat 0px center;
+}
+.disable .select-container {
+    background-color: #eee !important;
+    cursor: no-drop !important;
+}
+.searchdropdownfield{
+	width: 380px;
+
+}
+
+.searchdropdownfield .zl_select .select-container > div,
+.searchdropdownfield-180 .zl_select .select-container > div{
+   width: 30px;
+   background: #CFD8DC url(../images/end/widget/close.png) center center no-repeat;
+}
+
+.searchdropdownfield .zl_select .select-container .open,
+.searchdropdownfield-180 .zl_select .select-container .open{
+	background: #40A0E1 url(../images/end/widget/open.png) center center no-repeat;
+}
+
+.searchdropdownfield .select-drop ul.items li.down,
+.searchdropdownfield-180 .select-drop ul.items li.down{
+	color:#40A0E1;
+}
+.searchdropdownfield .select-drop ul.items li.over,
+.searchdropdownfield-180 .select-drop ul.items li.over{
+	color:#40A0E1;
+}
+/* select2样式 */
+.select2-selection__arrow{
+    /* display:none; */
+}
+.select2-dropdown{
+    border: 1px solid #0099ff !important;
+}
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+    border: 1px solid #0099ff !important;
+    outline: 0;
+}
+.select2-search--dropdown{
+    padding:0;
+}
+.select2-search--dropdown>input{
+    outline:none;
+    border:1px solid #2CD5B4 !important;
+    /*border-top:0 !important;*/
+    border-bottom:0 !important;
+}
+.select2-container .select2-selection{
+    height:100%;
+}
+.select2-selection{
+    background-color: #F5F9FB;
+    border: 1px solid #EEE;
+}
+.select2-container .select2-search .select2-search__field{
+    background-color: transparent;
+}
+.select2-container--open.select2-container .select2-search .select2-search__field{
+    background-color: #fff !important;
+}
+.select2-selection .select2-selection__choice{
+    background-color: #e6f5ff!important;
+    color: #444!important;
+}
+.select2-container .select2-selection{
+    background: #F5F9FB;
+    border: 1px solid #EEEEEE;
+}
+.select2-dropdown{
+    border:0;
+}
+.select2-container .select2-selection .select2-selection__choice__remove{
+    float:right;
+    color:#fff;
+}
+.select2-container.select2-container--focus .select2-selection{
+    border-color:#eee;
+}
+.select2-container .select2-selection .select2-selection__choice{
+    border-color:#e6f5ff!important;
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #e6f5ff !important;
+    color: #444 !important;
+}
+.select2-container--default .select2-results__option[aria-selected=true] {
+    background-color: #0099ff !important;
+    color: #fff !important;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove{
+    color: #999 !important;
+    margin-left: 3px !important;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover{
+    color: #0099ff !important;
+}
+/**********textarea组件**********/
+.textareafield *{
+	box-sizing:border-box;
+}
+.textareafield p.textarea-tips span{
+	color:#2CD5B4;
+}
+textarea{
+    width:100%;
+    height:176px;
+    outline: 0;
+    padding:20px;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    background: #fff;
+    border:1px solid #ccc;
+    border-radius: 3px;
+}
+.error textarea{
+	border:1px solid #FF6666;
+	background-color: #fff;
+}
+.disable textarea{
+	background-color: #E3ECF1  !important;
+}
+
+/* layer弹窗 */
+.layui-layer-btn .layui-layer-btn0{
+    border-color: #0099ff !important;
+    background-color: #0099ff !important;
+}
+.layui-layer-btn,.layui-layer-title{
+    background: #fff !important;
+}
+.layui-layer-title{
+    position: relative;
+    border-bottom: 1px solid #e4e4e4;
+}
+.layui-layer-title>span{
+    position: absolute;
+    top: 0;
+    left: 20px;
+    display: inline-block;
+    box-sizing: border-box;
+    height: 40px;
+    border-bottom: 3px solid #0099ff;
+    color: #444;
+    z-index: 100;
+}
+.layui-layer-ico{
+    width: 12px!important;
+    height: 12px!important;
+    background: url(../images/end/widget/icon-close.png) !important;
+}
+.layui-layer-ico:hover{
+    background: url(../images/end/widget/icon-close-hover.png) !important;
+}
+
+.horizontal{
+    height: 66px;
+  }
+  .horizontal:after{
+    display: block;
+    content: '';
+    clear: both;
+  }
+  .horizontal>label,.horizontal .textfield{
+    float:left;
+  }
+  .horizontal>label{
+    margin-top: 13px;
+    width: 120px;
+    text-align: right;
+    padding-right: 10px;
+  }
+  .horizontal>label>span.required{
+    color: #FF6666;
+    margin-left: 5px;
+  }

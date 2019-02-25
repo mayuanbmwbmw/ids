@@ -1,0 +1,117 @@
+// JavaScript Document
+(function ($) {
+    $.fn.formsStyle = function (options) {
+        var defaults = {
+            hasClose: false,
+            hasEnter: false,
+            btnW: 18,
+            mg_l:"0px",
+            enterCallback: $.noop()
+        };
+        setOptions(options);
+        this.each(function () {
+            var obj = $(this);
+            var h = obj.outerHeight();
+            var w = obj.outerWidth();
+            var p_obj = obj.parent();
+            var texts = obj.attr("msg");
+            var div_forms = $("<div class='div_forms'/>");
+            var i = 0;
+            if (defaults.hasClose){
+                i++;
+            }
+            if (defaults.hasEnter){
+                i++;
+            }
+            div_forms.width(w+defaults.btnW*i);
+            div_forms.height(h);
+
+            div_forms.prependTo(p_obj);
+            var div_text = $("<div class='div_text'/>");
+            div_text.attr("msg", texts);
+            div_text.text(texts);
+            div_text.appendTo(div_forms);
+            if ($.nodeName(obj[0], "INPUT")) {
+                div_text.css({"top": (h - div_text.outerHeight()) / 2, "left": "2px","marginLeft":defaults.mg_l});
+            } else {
+                div_text.css({"top": "2px", "left": "2px","marginLeft":defaults.mg_l});
+            }
+            obj.appendTo(div_forms);
+
+            var btn_empty = $("<span class='btn_empty'></span>");
+            var btn_enter = $("<span class='btn_enter'></span>");
+            if(defaults.hasClose){
+                btn_empty.appendTo(div_forms)
+                    .bind("click",function(){
+                        $(this).hide();
+                        obj.val("").focus();
+                    });
+                btn_empty.css({"top": (h - div_text.outerHeight()) / 2, "right": defaults.hasEnter?defaults.btnW:"0px"}).hide();
+            }
+            if(defaults.hasEnter){
+                btn_enter.appendTo(div_forms)
+                    .bind("click",function(){
+                        !!defaults.enterCallback&&defaults.enterCallback.call(obj,obj.val());
+                    });
+                btn_enter.css({"top": (h - div_text.outerHeight()) / 2, "right": "0px"});
+            }
+
+
+
+            var currentE = $(".div_text", p_obj);
+            //脦脛卤戮驴貌陆鹿碌茫禄帽脠隆
+            obj.bind("focus", function (e) {
+                //var e = window.event || e;
+                //var eventTarget = e.srcElement || e.target;
+                /*if (currentE.attr("msg") == currentE.text()) {
+                    currentE.text("");
+                    obj.val("");
+                    //$(eventTarget).css('color','#6084a4');
+                }*/
+                currentE.hide();
+            });
+            //脦脛卤戮驴貌陆鹿碌茫脪脝鲁枚
+            obj.bind("blur", function (e) {
+                //var e = window.event || e;
+                //var eventTarget = e.srcElement || e.target;
+                /*if (currentE.text() == "" &&obj.val() == "") {
+                    //currentE.text(currentE.attr("msg"));
+                    //currentE.css('color','#a0a0a0');
+                    currentE.show();
+                }*/
+
+                if (obj.val() == "") {
+                    //currentE.text(currentE.attr("msg"));
+                    //currentE.css('color','#a0a0a0');
+                    currentE.show();
+                }
+
+            });
+            //脦陋脣脩脣梅脕陋脧碌脠脣掳贸露篓脡戮鲁媒脢脗录镁
+            obj.bind("input propertychange", function(){
+                if($(this).val().length>0){
+                    $(this).siblings(".btn_empty").show().css("display","inline-block");
+                }else{
+                    $(this).siblings(".btn_empty").hide();
+                }
+            })
+            //碌茫禄梅脤谩脢戮脦脛脳脰
+            div_text.bind("click", function () {
+                obj.focus();
+            })
+
+        });
+
+        //潞脧虏垄虏脦脢媒
+        function setOptions(options) {
+            defaults = $.extend(defaults, options);
+            return defaults;
+        }
+
+        //碌脙碌陆虏脦脢媒录炉潞脧
+        function getOptions() {
+            return defaults;
+        }
+    };
+
+})(jQuery);

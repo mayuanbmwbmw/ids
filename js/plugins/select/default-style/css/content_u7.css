@@ -1,0 +1,113 @@
+/* CSS Document */
+.zl_select .select-container {
+	background-color: #F5F9FB;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+/*	border-bottom: 0px;*/
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    line-height: 26px;
+    padding: 0 0 0 14px;
+    color: #333333;
+    text-decoration: none;
+	outline:none;
+	border:1px solid  #f4f4f4;
+	border-radius: 5px;
+}
+.zl_select .select-container.disabled {
+	border-color: #999999;
+	background: #eaeaea;
+	color: #999999;
+}
+
+.zl_select select{
+	/*display:none;*/
+}
+.zl_select{
+	vertical-align: middle;
+    position: relative;
+}
+
+.select-drop{
+	position: absolute;
+	display: none;
+	border-width: 1px 1px 1px 1px;
+	border-color: #0099ff;
+	border-style: solid;
+	border-radius: 5px;
+	height: auto;
+	background: #fff;
+	z-index: 10000;
+	margin-top: 0px;
+	overflow-y: auto;
+	max-height: 160px;
+}
+
+.select-drop ul.items{
+	list-style:none;
+	margin:0px;
+	padding:0px;
+}
+
+.select-drop ul.items li{
+	cursor:pointer;
+	word-warp: break-word;
+	word-break: break-all;/*Only work in IE*/
+	text-align: left;
+	padding-left: 14px;
+	padding: 10px 13px;
+	color:#999;
+}
+
+.select-drop ul.items li.over{
+	background:#e6f5ff;
+	color: #000;
+}
+
+.select-drop ul.items li.down{
+	color: #000;
+}
+
+.zl_select .select-container > div{
+	width:20px;
+	height:100%;
+	float:right;
+	clear:right;
+	background:url(../images/icon.png) no-repeat 0px center;
+	position:absolute;
+	right:0px;
+	/*background-color:#fff;*/
+}
+
+.zl_select .select-container .open{
+	background:url(../images/icon_down.png) no-repeat 0px center;
+}
+
+.zl_select .active{
+	background-color:#fff !important;
+	border:1px solid #0099ff !important;
+}
+
+
+
+.zl_select .select-container > span{
+	float:left;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap; 
+	text-align:left;
+}
+.select-drop {
+	box-sizing:content-box;
+}
+
+.optgroups{
+	font-weight: bold;
+}
+
+.optgroup-option{
+	margin-left: 20px;
+}

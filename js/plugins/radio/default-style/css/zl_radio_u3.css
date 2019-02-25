@@ -1,0 +1,45 @@
+/* CSS Document */
+
+
+
+.radio_label{
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	line-height: 14px;
+	vertical-align: middle;
+}
+.icon_radio{
+
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 3px;
+	float: left;
+	width: 16px;
+	height:16px;
+	cursor: pointer;
+}
+
+
+
+.radio_normal .icon_radio{
+	background: url(../images/radio.png) no-repeat 0 0px;
+	/*cursor:pointer;*/
+}
+.radio_down .icon_radio{
+	background:url(../images/radio_down.png) no-repeat 0 0px;
+	/*cursor: pointer;*/
+}
+.radio_disabled .icon_radio{
+	background:url(../images/radio_disabled.png) no-repeat 0 0px;
+	/*cursor:pointer;*/
+}
+/*
+.icon_radio:hover{
+	background:url(../images/radio_hover.png) no-repeat 0 0px;
+}
+*/
+.radio_ele{
+	position: fixed;
+	left: -999em;
+}

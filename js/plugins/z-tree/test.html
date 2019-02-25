@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="../../../css/common.css">
+    <script src="../../libs/jquery-1.11.1.min.js"></script>
+    <!--z-tree-->
+    <link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <script type="text/javascript" src="js/jquery.ztree.core.js"></script>
+    <script type="text/javascript" src="js/jquery.ztree.excheck.js"></script>
+    <!--mystyle-->
+    <link rel="stylesheet" href="../../../css/teststyle.css">
+    <title>Title</title>
+</head>
+<body class="w-1200 mgauto">
+<h4>接口参考地址 </h4>
+<div class="mb-10">
+    <a href="http://www.treejs.cn/v3/demo.php#_101" class="f-s-15">http://www.treejs.cn/v3/demo.php#_101</a>
+</div>
+<h4>效果</h4>
+<div class="zTreeDemoBackground left">
+    <ul id="treeDemo" class="ztree"></ul>
+</div>
+<h4>结构</h4>
+<pre>
+    <div class="zTreeDemoBackground left">
+        <ul id="treeDemo2" class="ztree"></ul>
+    </div>
+</pre>
+<h4>调用</h4>
+<pre>
+    引入
+    &lt;link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css" type="text/css"&gt;
+    &lt;script type="text/javascript" src="js/jquery.ztree.core.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="js/jquery.ztree.excheck.js"&gt;&lt;/script&gt;
+    //备注：pId的值对应父级的id值
+      var setting = {
+            check: {
+                enable: true
+            },
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            }
+        }
+        var zNodes=[
+            {"id":"gn","pId":0,"name":"功能菜单",open:true,isParent:true},
+            {"id":"mb","pId":"gn","name":"我的面板",open:true,isParent:true},
+            {"id":"mb1","pId":"mb","name":"个人信息",open:true,isParent:true},
+            {"id":"mb-0","pId":"mb1","name":"个人信息"},
+            {"id":"mb-1","pId":"mb1","name":"修改密码"},
+            {"id":"wj","pId":"mb","name":"文件管理",open:true,isParent:true},
+            {"id":"wj1","pId":"wj","name":"文件管理",open:true,isParent:true},
+            {"id":"wj1-0","pId":"wj1","name":"查看"},
+            {"id":"wj1-1","pId":"wj1","name":"上传"},
+            {"id":"wj1-2","pId":"wj1","name":"修改"}
+        ];
+         $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+        })
+</pre>
+
+<script>
+
+    $(document).ready(function(){
+        //去标签
+        $("pre").each(function(){
+            var thishtml = $(this).html();
+            var reg1= /\</g;
+            var reg2 = /\>/g;
+            thishtml=thishtml.replace(reg1,"&lt;");
+            thishtml=thishtml.replace(reg2,"&gt;");
+            $(this).html(thishtml);
+        });
+        //    ztree
+        var setting = {
+            check: {
+                enable: true
+            },
+            data: {
+                simpleData: {
+                    enable: true,
+                    idKey: "id",
+                    pIdKey: "pId",
+                    rootPId: 0
+                }
+            },
+            callback: {
+                onClick: function(event, treeId, treeNode){
+                    alert("123456");
+                }
+            }
+
+
+        }
+        var zNodes=[
+            {"id":"gn","pId":0,"name":"功能菜单",open:true,isParent:true},
+            {"id":"mb","pId":"gn","name":"我的面板",open:true,isParent:true},
+            {"id":"mb1","pId":"mb","name":"个人信息",open:true,isParent:true},
+            {"id":"mb-0","pId":"mb1","name":"个人信息"},
+            {"id":"mb-1","pId":"mb1","name":"修改密码"},
+            {"id":"wj","pId":"mb","name":"文件管理",open:true,isParent:true},
+            {"id":"wj1","pId":"wj","name":"文件管理",open:true,isParent:true},
+            {"id":"wj1-0","pId":"wj1","name":"查看"},
+            {"id":"wj1-1","pId":"wj1","name":"上传"},
+            {"id":"wj1-2","pId":"wj1","name":"修改"},
+            {"id":"bangong","pId":"gn","name":"在线办公",open:true,isParent:true},
+            {"id":"tongzhi","pId":"bangong","name":"通知公告",open:true,isParent:true},
+            {"id":"tongzhi-0","pId":"tongzhi","name":"我的通告"},
+            {"id":"tongzhi-1","pId":"tongzhi","name":"通告管理"},
+            {"id":"geren","pId":"bangong","name":"个人办公",open:true,isParent:true},
+            {"id":"geren-0","pId":"geren","name":"我的任务"},
+            {"id":"geren-1","pId":"geren","name":"审批测试"},
+            {"id":"qingjia","pId":"geren","name":"请假办理"},
+            {"id":"qingjia-0","pId":"qingjia","name":"查看"},
+            {"id":"qingjia-1","pId":"qingjia","name":"修改"},
+            {"id":"liucheng","pId":"bangong","name":"流程管理",open:true,isParent:true},
+            {"id":"liucheng-0","pId":"liucheng","name":"流程管理"},
+            {"id":"liucheng-0","pId":"liucheng","name":"流程管理1"},
+            {"id":"liucheng-0","pId":"liucheng","name":"流程管理2"},
+            {"id":"liucheng-0","pId":"liucheng","name":"流程管理3"},
+            {"id":"liucheng-0","pId":"liucheng","name":"流程管理4"}
+        ];
+         $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+        })
+</script>
+</body>
+</html>
